@@ -17,10 +17,10 @@ urlpatterns = [
         "users/",
         include("users.urls"),
     ),
-    #path(
-    #    "statuses/",
-    #    include("statuses.urls"),
-    #),
+    path(
+        "statuses/",
+        include("statuses.urls"),
+    ),
     #path(
     #    "labels/",
     #    include("labels.urls"),
