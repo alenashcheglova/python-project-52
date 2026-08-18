@@ -9,14 +9,11 @@ User = get_user_model()
 
 
 class StatusViewsTest(TestCase):
-    # Используем фикстуру пользователей с прошлого шага
     fixtures = ["users.json"]
 
     def setUp(self):
-        # Берем пользователя из фикстуры для авторизации
         self.user = User.objects.get(pk=1)
         
-        # Создаем тестовые статусы прямо в базе
         self.status = Status.objects.create(name="Новый")
         self.status2 = Status.objects.create(name="В работе")
 

@@ -21,14 +21,14 @@ urlpatterns = [
         "statuses/",
         include("statuses.urls"),
     ),
-    #path(
-    #    "labels/",
-    #    include("labels.urls"),
-    #),
-    #path(
-    #    "tasks/",
-    #    include("tasks.urls"),
-    #),
+    path(
+        "labels/",
+        include("labels.urls"),
+    ),
+    path(
+        "tasks/",
+        include("tasks.urls"),
+    ),
     path(
         "login/",
         UserLoginView.as_view(),
