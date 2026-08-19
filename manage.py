@@ -7,6 +7,8 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'task_manager.settings')
+    if "tailwind" in sys.argv:
+        return
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
