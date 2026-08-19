@@ -1,5 +1,6 @@
 import os
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 from pathlib import Path
 
 import dj_database_url
@@ -167,5 +168,6 @@ SENTRY_DSN = os.getenv('SENTRY_DSN')
 if SENTRY_DSN:
     sentry_sdk.init(
         dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
         traces_sample_rate=1.0,
     )
