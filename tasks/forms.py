@@ -34,7 +34,3 @@ class TaskForm(forms.ModelForm):
                 ),
             },
         }
-
-def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["executor"].label_from_instance = lambda obj: obj.get_full_name()
