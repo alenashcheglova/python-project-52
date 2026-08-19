@@ -21,3 +21,7 @@ makemigr:
 
 test:
 	uv run python manage.py test
+
+setup:
+	uv sync
+	uv run python manage.py migrate
