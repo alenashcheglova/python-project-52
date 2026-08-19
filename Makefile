@@ -12,3 +12,12 @@ build:
 
 render-start:
 	gunicorn task_manager.wsgi
+
+dev:
+	uv run python manage.py runserver
+
+makemigr:
+	uv run python manage.py makemigrations
+
+test:
+	uv run python manage.py test
