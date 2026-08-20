@@ -1,30 +1,28 @@
+.PHONY: install migrate collectstatic dev render-start build lint test test-coverage
+
 install:
 	uv sync
 
 migrate:
-	uv run python manage.py migrate
+	.venv/bin/python manage.py migrate
 
 collectstatic:
-	uv run python manage.py collectstatic --no-input
-
-build:
-	./build.sh
-
-render-start:
-	gunicorn task_manager.wsgi
+	.venv/bin/python manage.py collectstatic --noinput
 
 dev:
 	uv run python manage.py runserver
 
-makemigr:
-	uv run python manage.py makemigrations
+render-start:
+	PATH="$(CURDIR)/.venv/bin:$$PATH" gunicorn task_manager.wsgi
+
+build:
+	./build.sh
+
+lint:
+	uv run ruff check .
 
 test:
 	uv run pytest
 
-setup:
-	uv sync
-	uv run python manage.py migrate
-
-test:
+test-coverage:
 	uv run pytest --cov=task_manager --cov-report=xml:coverage.xml
