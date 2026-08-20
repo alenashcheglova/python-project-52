@@ -27,9 +27,7 @@ jobs:
         run: make install
 
       - name: Run tests and collect coverage
-        run: |
-          make test-coverage
-          sed -i 's|<source>.*</source>|<source>/github/workspace</source>|g' coverage.xml
+        run: make test-coverage
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995
