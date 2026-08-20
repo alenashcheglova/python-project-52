@@ -15,3 +15,5 @@ media/
 .idea/
 .DS_Store
 Thumbs.db
+staticfiles/*
+!staticfiles/.keep

@@ -25,4 +25,4 @@ test:
 	uv run pytest
 
 test-coverage:
-	uv run pytest --cov=labels --cov=statuses --cov=tasks --cov=users --cov-report=xml:coverage.xml
+	uv run pytest --cov=labels --cov=statuses --cov=tasks --cov=users --cov=task_manager --cov-report=xml:coverage.xml
