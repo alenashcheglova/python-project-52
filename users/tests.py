@@ -226,3 +226,9 @@ class UserViewsTest(TestCase):
             "Вы разлогинены",
             self.get_message_texts(response),
         )
+
+    def test_user_model_str(self):
+        self.assertEqual(
+            str(self.user),
+            self.user.get_full_name()
+        )

@@ -30,3 +30,10 @@ exclude = [
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+[tool.coverage.run]
+omit = [
+    "manage.py",
+    "task_manager/settings.py",
+    "*/migrations/*",
+]
