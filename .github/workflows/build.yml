@@ -29,7 +29,7 @@ jobs:
       - name: Run tests and collect coverage
         run: |
           make test-coverage
-          sed -i "s|${{ github.workspace }}|/github/workspace|g" coverage.xml
+          sed -i 's|/home/runner/work/python-project-52/python-project-52|/github/workspace|g' coverage.xml
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995
