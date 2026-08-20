@@ -20,8 +20,11 @@ makemigr:
 	uv run python manage.py makemigrations
 
 test:
-	uv run python manage.py test
+	uv run pytest
 
 setup:
 	uv sync
 	uv run python manage.py migrate
+
+test:
+	uv run pytest --cov=task_manager --cov-report=xml:coverage.xml
