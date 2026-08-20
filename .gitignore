@@ -17,3 +17,5 @@ media/
 Thumbs.db
 staticfiles/*
 !staticfiles/.keep
+.coverage
+coverage.xml
