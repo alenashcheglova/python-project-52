@@ -35,6 +35,7 @@ exclude = [
 select = ["E", "F", "I"]
 
 [tool.coverage.run]
+relative_files = true
 omit = [
     "manage.py",
     "task_manager/settings.py",
