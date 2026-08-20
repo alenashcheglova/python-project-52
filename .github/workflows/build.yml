@@ -24,14 +24,12 @@ jobs:
         uses: astral-sh/setup-uv@v3
 
       - name: Install dependencies
-        run: |
-          export PATH="$HOME/.local/bin:$PATH"
-          make install
+        run: make install
 
       - name: Run tests and collect coverage
         run: |
-          export PATH="$HOME/.local/bin:$PATH"
           make test-coverage
+          sed -i "s|${{ github.workspace }}|/github/workspace|g" coverage.xml
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995
@@ -40,5 +38,5 @@ jobs:
         with:
           args: >
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.exclusions=**/manage.py,**/migrations/**,task_manager/settings.py
-            -Dsonar.coverage.exclusions=**/manage.py,**/migrations/**,task_manager/settings.py
+            -Dsonar.exclusions=**/manage.py,**/migrations/**,**/.venv/**,**/*.html,task_manager/settings.py,task_manager/asgi.py,task_manager/wsgi.py,**/tests.py,**/admin.py,**/apps.py
+            -Dsonar.coverage.exclusions=**/manage.py,**/migrations/**,**/.venv/**,**/*.html,task_manager/settings.py,task_manager/asgi.py,task_manager/wsgi.py,**/tests.py,**/admin.py,**/apps.py
