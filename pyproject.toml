@@ -35,10 +35,16 @@ exclude = [
 select = ["E", "F", "I"]
 
 [tool.coverage.run]
+relative_files = true
 omit = [
     "manage.py",
     "task_manager/settings.py",
+    "task_manager/wsgi.py",
+    "task_manager/asgi.py",
     "*/migrations/*",
+    "*/tests.py",
+    "*/admin.py",
+    "*/apps.py"
 ]
 
 [tool.pytest.ini_options]
