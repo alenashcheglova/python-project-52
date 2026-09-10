@@ -22,7 +22,7 @@ Task Manager — система управления задачами. В ней
 
 ## Installation
 
-    git clone https://github.com/Denwien/python-project-52.git
+    git clone https://github.com/alenashcheglova/python-project-52.git
     cd python-project-52
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
